@@ -30,9 +30,9 @@ function celdasVacias() {
 }
 
 //le paso un array de celdas y me va a devolver 2 de forma aleatoria
-function celdaAleatorias(celdas) {
+function celdaAleatoria(celdas) {
     //pos es posición
-    let pos = Math.random() * celdasVacias.length;
+    let pos = Math.floor(Math.random() * celdasVacias().length);
     //entre 0 y 16 devuelve en consola, una posición aleatoria
     return celdas[pos];
 }
@@ -41,7 +41,7 @@ function nuevoNumero() {
     //devuelve el array de celdas vacías
     let celdasLibres = celdasVacias();
     //va a devolver una celda libre
-    let nuevaPos = celdaAleatorias(celdasLibres);
+    let nuevaPos = celdaAleatoria(celdasLibres);
     tablero[nuevaPos] = valorAleatorio();
 }
 
@@ -55,24 +55,33 @@ function rellenarTablero() {
         if (tablero[key] != 0) {
             //aquí pilla el html
             document.getElementById(key).innerHTML = tablero[key];
+        } else {
+            document.getElementById(key).innerHTML;
         }
     }
 }
-//funciones flechas
+//funciones flechas AQUI AQUI AQUI AQUI AQUI AQUI
+//j es la columna
 function desplazarArriba() {
     //Posición = UP, DOWN
-    let posU="", posD="";
-    for (let index = 0; index < 2; index++) {
-        posU="0"+index;
-        posD="0"+index+1;
+    let posU = "", posD = "";
+    for (let j = 0; j < 2; j++) {
+        while (tablero[String(j)+"0"]) {
 
 
-        if (tablero['03'] == tablero['02']) {
-            tablero['02'] += tablero['03'];
-            tablero['03'] = 0;
+            for (let index = 0; index <= 2; index++) {
+                posU = String(j) + index;
+                posD = String(j) + (index + 1);
+                if (tablero[posU] == tablero[posD] || tablero[posU] == 0) {
+                    tablero[posU] += tablero[posD];
+                    tablero[posD] = 0;
+                }
+            }
         }
     }
 }
+
+
 //teclas parriba pa bajo
 document.addEventListener("keydown", function (event) {
     switch (event.key) {
