@@ -29,3 +29,5 @@ function celdasVacias() {
     }
     return arrayCeldasVacias;
 }
+
+//le paso un array de celdas y me va a devolver 2 de forma aleatoria
