@@ -1,4 +1,3 @@
-
 var tablero={
     "00":0,
     "01":0,
@@ -31,3 +30,22 @@ function celdasVacias() {
 }
 
 //le paso un array de celdas y me va a devolver 2 de forma aleatoria
+function celdaAleatorias(celdas) {
+    //pos es posición
+    let pos=Math.random()*celdasVacias.length;
+    //entre 0 y 16 devuelve en consola, una posición aleatoria
+    return celdas [pos];
+}
+
+function nuevosNumeros() {
+    //devuelve el array de celdas vacías
+    let celdasLibres=celdasVacias();
+    //va a devolver una celda libre
+    let nuevaPos=celdaAleatorias(celdasLibres);
+}
+
+//generamos 2 o 4, y el 2 tiene el 90% de la probabilidad
+function valorAleatorio() {
+    //el ? es un operador ternario. El 90 que sea 2, sino 4.
+    return Math.random()<0.9?2:4;
+}
