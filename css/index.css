@@ -1,0 +1,25 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+header img {
+    width: 50px;
+    height: 50px;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+}
+
+.celda {
+    width: 150px;
+    height: 150px;
+    border: 2px solid black;
+    display: table-cell;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
