@@ -37,11 +37,12 @@ function celdaAleatorias(celdas) {
     return celdas [pos];
 }
 
-function nuevosNumeros() {
+function nuevoNumero() {
     //devuelve el array de celdas vacías
     let celdasLibres=celdasVacias();
     //va a devolver una celda libre
     let nuevaPos=celdaAleatorias(celdasLibres);
+    tablero[nuevaPos]=valorAleatorio();
 }
 
 //generamos 2 o 4, y el 2 tiene el 90% de la probabilidad
